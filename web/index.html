@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title id="Title">Radio FORNAX</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link href="style/style.css" rel="stylesheet" type="text/css">
+		<link id="colorScheme" href="style/colors/orange.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" type="image/png" href="style/logo.png"/>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="script/jquery.cookie.js"></script>
+		<script type="text/javascript" src="script/js.js"></script>
+	</head>
+	<body>
+		<div id="dHead" class="main-divs">
+			<div id="sTitle" style="position: absolute; font-size: 50px; left: 0px; width: 350px; height: 100%;">Radio FORNAX</div>
+			<div id="dHeadRow1" style="position: absolute; height: 100%; left: 350px; right: 0px; top: 0%;">
+				[<a href="#" onclick="showPopup(1)">Request&nbsp;a&nbsp;song!</a>] 
+				[<a href="#" onclick="showPopup(0)">Settings</a>] 
+				[<a href="https://dogechat.net/join:radiofornax" target="_blank">Join&nbsp;our&nbsp;chat&nbsp;room!</a>] 
+				[<a href="http://radiochicken.herobo.com/" target="_blank">Dwarfychicken's&nbsp;website!</a>] 
+				[<a href="http://radio.tdeo.tk/radio/" target="_blank">Tadeo's&nbsp;website!</a>] 
+			</div>
+		</div>
+		
+		<div id="dColLeft" class="main-divs">
+			<span style="font-size: 40px;">Playlist  </span><span id="songQueue">1337</span> songs in queue!
+			<div id="dPlaylist" class="video-container" style="bottom: 0px; top: 60px;">
+				Nothing
+			</div>
+		</div>
+		
+		<div id="dSongProgress" class="main-divs"><div id="dSongProgressForeground"></div></div>
+		
+		<div id="dPlayerControls" class="main-divs">
+			<audio id="aPlayer" style="visibility: hidden;" autoplay="autoplay">
+				<source src="http://213.73.138.240:10000" type="audio/ogg" />
+				Your browser does not support the audio tag.
+			</audio>
+			<img id="playButton" 
+				 onClick="player.play();" 
+				 src="style/play.png"
+				 style="height: 100%; float: left;"
+				 alt="">
+			<img id="pauseButton" 
+				 onClick="player.pause(); player.currentTime = 0;" 
+				 src="style/pause.png"
+				 style="height: 100%; float: left;"
+				 alt="">
+			Volume:<br>
+			<input id="iVolSlider"
+				   onChange="player.volume = (document.getElementById('iVolSlider').value / 100);"
+				   type="range"
+				   style="position: absolute; margin-left: 0px; width: 50%;">
+		</div>
+		
+		<div id="dColCenter" class="main-divs">
+			<span id="curTitle">Video Title!</span>
+			<br>
+			<img id="curVidThumbnail" src="http://img.youtube.com/vi/DxtmQDCyLE8/hqdefault.jpg" style="width: 100%" alt="">
+		</div>
+		
+		<div id="dColRight" class="main-divs">
+			Connecting to Radio FORNAX in your mediaplayer of choice
+			<hr>
+			Clementine
+			<ol>
+				<li>Go to the 'Internet' tab on the left side</li>
+				<li>Right-click 'Your radio streams' and click 'Add another stream'</li>
+				<li>At the URL field enter: 'http://213.73.138.240:10000'</li>
+				<li>At the name field enter: 'Radio FORNAX'</li>
+				<li>Click OK</li>
+				<li>Add Radio FORNAX to your playlist</li>
+			</ol>
+
+			WinAmp
+			<ol>
+				<li>From the 'File' menu, select 'Play URL'</li>
+				<li>In the input field enter: 'http://213.73.138.240:10000?.ogg'</li>
+				<li>Click 'Open'</li>
+				<li>Double click the stream in the playlist</li>
+			</ol>
+			
+			VLC Mediaplayer
+			<ol>
+				<li>From the 'Media' menu, select 'Open Network stream'</li>
+				<li>In the 'Network URL' field, enter: 'http://213.73.138.240:10000'</li>
+				<li>Click 'Play' and enjoy the awesomeness</li>
+			</ol>
+		</div>
+		
+		<div id="dHoverFrame">
+			<div id="popupSettings" class="main-divs" style="position: absolute; display: none; left: 20%; right: 20%; top: 20%; bottom: 20%; overflow-y: scroll;">
+				<img src="style/close.png" onClick="document.getElementById('popupSettings').style.display = 'none'; document.getElementById('dHoverFrame').style.display = 'none';" style="position: absolute; top: 0px; right: 0px;" alt="">
+				Pick your favorite color! (Or something that looks like it):
+				<form action="#">
+					<span onclick="changeColor('green');" ><input type="radio" name="colorPick" id="setGreen"><label for="setGreen">Green</label></span><br>
+					<span onclick="changeColor('blue');"  ><input type="radio" name="colorPick" id="setBlue"><label for="setBlue">Blue</label></span><br>
+					<span onclick="changeColor('red');"   ><input type="radio" name="colorPick" id="setRed"><label for="setRed">Red</label></span><br>
+					<span onclick="changeColor('orange');"><input type="radio" name="colorPick" id="setOrange"><label for="setOrange">Orange</label></span><br>
+					<span onclick="changeColor('black');" ><input type="radio" name="colorPick" id="setBlack"><label for="setBlack">Black</label></span><br>
+					<span onclick="changeColor('purple');"><input type="radio" name="colorPick" id="setPurple"><label for="setPurple">Purple</label></span><br>
+					<span onclick="changeColor('yellow');"><input type="radio" name="colorPick" id="setYellow"><label for="setYellow">Yellow</label></span>
+				</form>
+			</div>
+			<div id="popupRequest" class="main-divs" style="position: absolute; display: none; left: 20%; right: 20%; top: 20%; bottom: 20%;">
+				<img src="style/close.png" onClick="document.getElementById('popupRequest').style.display = 'none'; document.getElementById('dHoverFrame').style.display = 'none';" style="position: absolute; top: 0px; right: 0px;" alt="">
+				Enter YouTube video URL to request a song: <br>
+				<!--<input id="inputVideo" type="text"> <button id="buttonVideo" onClick="requestSong();">Request</button>
+				-->
+				<iframe frameborder="0" allowtransparency="true" src="request.jsp" style="width: 100%; height: 80%;">Get a real browser, dude!</iframe>
+			</div>
+		</div>
+	</body>
+</html>
