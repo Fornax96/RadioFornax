@@ -13,6 +13,7 @@ import uk.co.caprica.vlcj.player.MediaPlayerFactory;
  * Completely abundant class, almost ready to be removed.
  */
 public class RadioUtil {
+	//TODO move this method to a more appropriate place and remove RadioUtil
 	private final MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
 	
 	public static String formatURL(String URL){

@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script type="text/javascript" src="script/jquery.cookie.js"></script>
 		<script type="text/javascript" src="script/js.js"></script>
+		<script src="http://www.dogets.com/widget/dogets.js"></script>
 	</head>
 	<body>
 		<div id="dHead" class="main-divs">
@@ -20,7 +21,20 @@
 				[<a href="#" onclick="showPopup(0)">Settings</a>] 
 				[<a href="https://dogechat.net/join:radiofornax" target="_blank">Join&nbsp;our&nbsp;chat&nbsp;room!</a>] 
 				[<a href="http://radiochicken.herobo.com/" target="_blank">Dwarfychicken's&nbsp;website!</a>] 
-				[<a href="http://radio.tdeo.tk/radio/" target="_blank">Tadeo's&nbsp;website!</a>] 
+				[<script>
+					DogetsCom.go({
+						wallet_address: "DR5r16hwuSoTo4UBELQR3au6nJpwcXc5nd",
+						currency: "dogecoin",
+						counter: "count",
+						alignment: "bl",
+						qrcode: true,
+						auto_show: false,
+						lbl_button: "Support Development!",
+						lbl_address: "Donate Dogecoin to this Address:",
+						lbl_count: "donations",
+						lbl_amount: "DOGE"
+					});
+				</script>]
 			</div>
 		</div>
 		

@@ -6,6 +6,8 @@ package nl.Fornax;
  * Here I was trying to fix the utter brokenness of the stream, but it's far from done
  * 
  * I have commented out the entire class so it wouldn't create any compile time errors
+ * 
+ * TODO Finish this class so it can replace the current Stream class
  */
 public class StreamNew extends Thread{
 	/*

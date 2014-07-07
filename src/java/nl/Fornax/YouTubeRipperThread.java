@@ -53,7 +53,7 @@ public class YouTubeRipperThread extends Thread{
 							//System.out.println(Thread.currentThread() + " Conversion: " + converter.getPosition() * 100 + "% done");
 							Thread.sleep(10000);
 						}
-
+						//TODO Check if conversion actually succeeded by comparing the length of the file by the length of the YouTube video with the YouTube API
 						Servlet.mainStream.addPathToPlaylist(Servlet.musicDir + id + ".ogg");
 						System.out.println(Thread.currentThread() + " Converted song added to playlist, " + conversionList.size() + " conversions to go!");
 					

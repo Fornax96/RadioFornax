@@ -34,6 +34,7 @@ public class Stream extends Thread{
 		addPathToPlaylist(Servlet.intermissionLocation);
 		
 		try{
+			//FIXME by finishing the new Stream class
 			while(running){
 				mediaPlayer.playMedia(playlist.get(0));
 				currentSong = playlist.get(0);
